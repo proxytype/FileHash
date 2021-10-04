@@ -17,7 +17,6 @@ namespace FileHasher
         }
 
         public const int MIN_ARGS = 2;
-        public const int MAX_ARGS = 3;
 
         static void printHeader()
         {
@@ -57,12 +56,6 @@ namespace FileHasher
 
                 string filename = args[0];
                 string algorithm = args[1].ToUpper();
-                string logfile = string.Empty;
-
-                if (args.Length > MIN_ARGS)
-                {
-                    logfile = args[2];
-                }
 
                 if (!File.Exists(filename))
                 {
@@ -80,16 +73,6 @@ namespace FileHasher
                     return;
                 }
 
-                Console.WriteLine("File:" + filename);
-                if (logfile == string.Empty)
-                {
-                    Console.WriteLine(" * log file disabled.");
-                }
-                else
-                {
-                    Console.WriteLine(" * log file enabled.");
-                    Console.WriteLine("   - " + logfile);
-                }
 
                 Console.WriteLine();
                 using (FileStream stream = File.OpenRead(filename))
@@ -129,6 +112,10 @@ namespace FileHasher
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Console.ResetColor();
             }
 
         }
