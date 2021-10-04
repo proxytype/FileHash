@@ -133,11 +133,6 @@ namespace FileHasher
 
         }
 
-        static void writeMessage(string message) {
-
-
-        }
-
         static string getHash(Stream stream, SUPPORTED_ALGORITHMS alg)
         {
             using (HashAlgorithm hasher = HashAlgorithm.Create(alg.ToString()))
