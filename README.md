@@ -1,4 +1,7 @@
 # FileHash
+
+![alt text](https://raw.githubusercontent.com/proxytype/FileHash/main/FileHash.JPG)
+
 Create unique hash from file by using hash algorithms, it's perfect for knowing if you are using the right file, based on .net cryptography library.<br />
 supporting MD5, SHA1, SHA256, SHA384 and SHA512.
 
